@@ -21,5 +21,4 @@ def predict(df):
     a=convert.fit_transform(df)
     return(model.predict(a))
 
-df=[[28663.76],[127056.21],[201126.82],["Florida"]]
 predict(df)
