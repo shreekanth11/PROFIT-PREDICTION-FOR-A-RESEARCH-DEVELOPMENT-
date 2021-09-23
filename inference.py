@@ -7,7 +7,7 @@ model= pickle.load(open('model_ml7.pkl','rb'))
 convert=load('poly_convert.joblib')
 
 def predict(df):
-    df.drop('Administration',axis=1,inplace=True)
+    df.drop('Administration',axis=1,inplace=Tr
     df["State_Florida"]=df["State"]
     df["State_Newyork"]=df["State"]
     for i in range(len(df.State)):
