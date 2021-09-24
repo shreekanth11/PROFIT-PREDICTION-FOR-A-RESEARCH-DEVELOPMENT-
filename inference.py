@@ -15,15 +15,18 @@ def predict(df):
         if(df.State[i]=='Florida'):
             df.State_Florida[i]=1
             df.State_Newyork[i]=0
-        else:
+        elif(df.State[i]=='Newyork'):
             df.State_Florida[i]=0
             df.State_Newyork[i]=1
+        else:
+            df.State_Florida[i]=0
+            df.State_Newyork[i]=0
     df.drop('State',axis=1,inplace=True)
     a=convert.fit_transform(df)
     numpy_array = a.to_numpy()
     predictions = model.predict(numpy_array)
     output = (np.around(predictions)).tolist()
-    sent = "Predicted Price is: "
+    sent = "Predicted Profit is: "
     output = [str(i) for i in output]
     output = ["{}{}".format(sent , i) for i in output]
     return output
